@@ -1,0 +1,23 @@
+{
+  "client_id": "CapAlertMind",
+  "is_multi_token": false,
+  "environment": "Development",
+  "database" : {
+    "db_name": "AlertMind",
+    "tables_name" : ["config","projects"]
+  },
+  "api_methods" : {
+    "user_info": "Auth/UserInfo",
+    "authorization_by_app_code": "Auth/AuthorizationByAppCode"
+  },
+  "production" : {
+    "base_url" : "https://b.alertmind.betezadi.ir/api/v1",
+    "redirect_uri": "https://alertmind.betezadi.ir",
+    "sso_site_url": "https://betezadi.ir"
+  },
+  "development" : {
+    "base_url" : "https://b.alertmind.betezadi.ir/api/v1",
+    "redirect_uri": "http://localhost:3000",
+    "sso_site_url": "https://betezadi.ir"
+  }
+}

@@ -1,0 +1,83 @@
+html{
+  font-family: 'Estedad-FD-Light',Tahoma, Sans-Serif !important;
+  .nui-input-label,.nui-select-label{
+    display: block !important;
+    text-align: right !important;
+    margin-bottom: 6px !important;
+
+  }
+
+}
+.font-common.Estedad_FD_Light
+    *,
+    .nui-checkbox-label-text, .nui-select, .nui-select option, .nui-input-label,
+    .nui-input, .nui-select-label, .nui-select-wrapper nui-select-default nui-select-md nui-select-rounded nui-select-error,
+    [data-nui-tooltip]:hover::before, [data-nui-tooltip]:hover::after, [data-nui-tooltip][data-nui-tooltip-position^='left']:hover::before, [data-nui-tooltip][data-nui-tooltip-position^='left']:hover::after, [data-nui-tooltip][data-nui-tooltip-position^='down']:hover::before, [data-nui-tooltip][data-nui-tooltip-position^='down']:hover::after, [data-nui-tooltip][data-nui-tooltip-position^='right']:hover::before, [data-nui-tooltip][data-nui-tooltip-position^='right']:hover::after, [data-nui-tooltip][data-nui-tooltip-position^='start']:hover::before, [data-nui-tooltip][data-nui-tooltip-position^='start']:hover::after, [data-nui-tooltip][data-nui-tooltip-position^='end']:hover::before, [data-nui-tooltip][data-nui-tooltip-position^='end']:hover::after, [data-nui-tooltip][data-nui-tooltip-position^='left']:focus-visible::before, [data-nui-tooltip][data-nui-tooltip-position^='left']:focus-visible::after, [data-nui-tooltip][data-nui-tooltip-position^='right']:focus-visible::before, [data-nui-tooltip][data-nui-tooltip-position^='right']:focus-visible::after, [data-nui-tooltip][data-nui-tooltip-position^='start']:focus-visible::before, [data-nui-tooltip][data-nui-tooltip-position^='start']:focus-visible::after, [data-nui-tooltip][data-nui-tooltip-position^='end']:focus-visible::before, [data-nui-tooltip][data-nui-tooltip-position^='end']:focus-visible::after, .nui-avatar-text,
+    .nui-message-inner-text, .nui-accordion-content, .nui-autocomplete-outer, .nui-autocomplete-input, .router-link-active.router-link-exact-active.nui-pagination-link, .nui-paragraph::after, .vehicle-info::after, .nui-textarea-label, .leaflet-draw-tooltip, .leaflet-draw-actions.leaflet-draw-actions-top.leaflet-draw-actions-bottom a, .apexcharts-yaxis-annotation-label {
+        font-family: inherit !important;
+    }
+
+    .nui-item-content {
+        text-align: right
+    }
+
+    .nui-slimscroll .px-6.pb-8 > ul {
+        width: 100%;
+    }
+
+    .nui-placeholder-page-subtitle {
+        text-align: justify;
+    }
+
+    html{
+        direction: rtl;
+  }
+
+  .nui-theme-toggle .nui-theme-toggle-input:not(:checked) ~ .nui-theme-toggle-inner .nui-sun {
+    --tw-translate-x: 50%;
+  }
+  .nui-theme-toggle .nui-theme-toggle-input:checked ~ .nui-theme-toggle-inner .nui-moon {
+    --tw-translate-x: 50%;
+  }
+
+  .nui-placeholder-page.nui-placeholder-xs .nui-placeholder-page-img{
+    margin-top: 5%;
+  }
+
+/* For WebKit-based browsers */
+::-webkit-scrollbar {
+  width: 7px; /* Width of the scrollbar */
+}
+
+/* Track (background) */
+::-webkit-scrollbar-track {
+  background: #d3d3d3; /* Color of the track */
+  border-radius: 5px;
+}
+
+/* Handle (thumb) */
+::-webkit-scrollbar-thumb {
+  background: #a9a9a9; /* Color of the handle */
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #d3d3d3; /* Color of the handle when hovered */
+}
+
+html #nt-container {
+  z-index: 100000 !important;
+}
+
+html #headlessui-portal-root {
+  z-index: 100000 !important;
+}
+
+
+
+/* Crisp */
+.crisp-client .cc-tlyw .cc-kxkl .cc-1hqb, .crisp-client .cc-tlyw .cc-kxkl .cc-nsge {
+  left: 24px !important;
+  right : auto !important;
+}

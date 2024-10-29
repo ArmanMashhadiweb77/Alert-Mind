@@ -1,0 +1,103 @@
+<script setup lang="ts">
+// const emits = defineEmits(['step'])
+const store = useWizardStore()
+const progress = computed(
+  () => ((store.getCurrentStep) / store.getSteps.length) * 100,
+)
+// const router = useRouter()
+const target = ref(null)
+const open = ref(false)
+
+function openDropdown() {
+  open.value = true
+}
+onClickOutside(target, () => (open.value = false))
+</script>
+
+<template>
+  <div class="dark:bg-muted-800 absolute start-0 top-0 h-16 w-full bg-white">
+    <div class="relative flex h-16 w-full items-center justify-between px-4">
+      <div class="flex items-center">
+        <NuxtLink
+          to="/dashboards"
+          class="border-muted-200 dark:border-muted-700 flex w-14 items-center justify-center border-r pe-6"
+        >
+          <TairoLogo class="text-primary-600 h-10 shrink-0" />
+        </NuxtLink>
+        <div class="hidden items-center gap-2 ps-6  sm:flex">
+          <p class="text-muted-500 dark:text-muted-400">
+            مرحله {{ store.getCurrentStep }}:
+          </p>
+          <h2 class="text-muted-800  dark:text-white">
+            {{ store?.getCurrentStepInfo?.name }}
+          </h2>
+        </div>
+        <div ref="target" class="relative hidden sm:block">
+          <button
+            type="button"
+            class="flex size-10 items-center justify-center"
+            @click="openDropdown"
+          >
+            <Icon
+              name="lucide:chevron-down"
+              class="text-muted-400 size-4 transition-transform duration-300"
+              :class="open ? 'rotate-180' : ''"
+            />
+          </button>
+          <div
+            class="border-muted-200 dark:border-muted-700 dark:bg-muted-800 shadow-muted-300/30 dark:shadow-muted-900/30 absolute start-0 top-8 z-20 w-52 rounded-xl border bg-white p-2 shadow-xl transition-all duration-300"
+            :class="
+              open
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 pointer-events-none translate-y-1'
+            "
+          >
+            <div class="space-y-1">
+              <button
+                v-for="step in store.getSteps"
+                :key="step.id"
+                type="button"
+                :disabled="step.id > store.getCurrentStep"
+                class="hover:bg-muted-100 dark:hover:bg-muted-700 flex w-full items-center gap-2 rounded-lg px-3 py-2  disabled:cursor-not-allowed disabled:opacity-70"
+                @click="
+                  () => {
+                    open = false
+                    // emits('step', step.id)
+                    if (step.id < store.getCurrentStep)
+                      store.goToStep(step.id)
+                  }
+                "
+              >
+                <p class="text-muted-500 dark:text-muted-400 text-xs">
+                  مرحله {{ step.id }}:
+                </p>
+                <h4 class="text-muted-800 text-xs font-medium dark:text-white">
+                  {{ step.name }}
+                </h4>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center justify-end gap-4">
+        <BaseButton
+          color="danger"
+          shadow="hover"
+          variant="outline"
+          @click="$router.back()"
+        >
+          بازگشت
+        </BaseButton>
+        <!-- <BaseThemeToggle /> -->
+        <!-- <DemoAccountMenu horizontal /> -->
+      </div>
+      <div class="absolute inset-x-0 bottom-0 z-10 w-full">
+        <BaseProgress
+          :value="progress"
+          size="xs"
+          rounded="full"
+        />
+      </div>
+    </div>
+  </div>
+</template>
